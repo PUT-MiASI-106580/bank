@@ -16,7 +16,7 @@ import java.util.Random;
  */
 public class Konto {
 
-	protected static class Wpis {
+	static class Wpis {
 		private final Operacja operacja;
 		private final List<Object> params;		
 		public Wpis(Operacja operacja, Object... params) {
@@ -150,5 +150,13 @@ public class Konto {
 			return true;
 		}
 		return false;
+	}
+	
+	private List<HistoryEntry> convertHistoryToList() {
+		List<HistoryEntry> entries = new ArrayList<>();
+		for (Date d : historia.keySet()) {
+			entries.add(new HistoryEntry(historia.get(d), d));
+		}
+		return entries;
 	}
 }
