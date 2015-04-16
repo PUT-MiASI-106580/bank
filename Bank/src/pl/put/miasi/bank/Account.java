@@ -14,9 +14,7 @@ import java.util.Random;
  * @author Mikolaj Szychowiak
  *
  */
-public class Account {
-
-
+public class Account implements IAccount{
 	
 	private double balance;
 	
@@ -115,11 +113,4 @@ public class Account {
 		this.pin = pin;
 	}	
 	
-	private List<HistoryEntry> convertHistoryToList() {
-		List<HistoryEntry> entries = new ArrayList<>();
-		for (Date d : history.keySet()) {
-			entries.add(new HistoryEntry(history.get(d), d));
-		}
-		return entries;
-	}
 }

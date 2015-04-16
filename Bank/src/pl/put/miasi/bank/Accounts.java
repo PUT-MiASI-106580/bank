@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Accounts implements IAuthorization {
 
-	private ArrayList<Account> accounts;
+	private ArrayList<IAccount> accounts;
 
 	private String prefix;
 	
@@ -100,17 +100,17 @@ public class Accounts implements IAuthorization {
 		this.prefix = prefix;
 	}
 
-	public List<Account> getAccounts() {
+	public List<IAccount> getAccounts() {
 		return accounts;
 	}
 
-	public void setAccounts(ArrayList<Account>accounts) {
+	public void setAccounts(ArrayList<IAccount>accounts) {
 		this.accounts = accounts;
 	}
 
 	public Accounts() {
 		this.prefix = new String();
-		this.accounts = new ArrayList<Account>();
+		this.accounts = new ArrayList<IAccount>();
 		IDGenerator = 0;
 	}
 
@@ -119,12 +119,12 @@ public class Accounts implements IAuthorization {
 		IDGenerator = 0;
 	}
 
-	public Accounts(ArrayList<Account> accounts) {
+	public Accounts(ArrayList<IAccount> accounts) {
 		this.accounts = accounts;
 		IDGenerator = 0;
 	}
 
-	public Accounts(String prefix, ArrayList<Account> accounts) {
+	public Accounts(String prefix, ArrayList<IAccount> accounts) {
 		this.prefix = prefix;
 		this.accounts = accounts;
 		IDGenerator = 0;
@@ -138,7 +138,7 @@ public class Accounts implements IAuthorization {
 		this.prefixLength = prefixLength;
 	}
 	
-	public boolean accountExists( Account account ){
+	public boolean accountExists(IAccount account ){
 		if( accounts != null ){
 			return accounts.contains(account);
 		}
@@ -146,8 +146,8 @@ public class Accounts implements IAuthorization {
 	}
 
 	@Override
-	public boolean Authorization(Account account, String pin) {
-		if( accounts != null ){
+	public boolean Authorization(IAccount account, String pin) {
+		if(accounts != null ){
 			if(accounts.contains(account) == true){
 				return account.getPin().equals(pin);
 			}
@@ -156,7 +156,7 @@ public class Accounts implements IAuthorization {
 	}
 
 	@Override
-	public boolean Authorization(Account account, Owner owner) {
+	public boolean Authorization(IAccount account, Owner owner) {
 		if( accounts != null ){
 			if(accounts.contains(account) == true){
 				return account.getOwner().contains(owner);

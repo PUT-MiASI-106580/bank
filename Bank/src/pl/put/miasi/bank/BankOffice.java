@@ -15,17 +15,17 @@ public class BankOffice implements IAuthorization, IBank {
 		this.bank = bank;
 	}
 
-	public boolean Authorization(Account account, String pin) {
+	public boolean Authorization(IAccount account, String pin) {
 		
 		return false;
 	}
 
-	public boolean Authorization(Account account, Owner owner) {
+	public boolean Authorization(IAccount account, Owner owner) {
 		return bank.Authorization(account, owner);
 	}
 
 	@Override
-	public boolean RemoveAccount(Account account, Owner owner) {
+	public boolean RemoveAccount(IAccount account, Owner owner) {
 		return RemoveAccount(account, owner);
 	}
 
@@ -40,22 +40,23 @@ public class BankOffice implements IAuthorization, IBank {
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, Owner owner) {
+	public boolean Withdraw(double outCash, IAccount account, Owner owner) {
 		return bank.Deposit(outCash, account, owner);
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, String pin) {
+	public boolean Withdraw(double outCash, IAccount account, String pin) {
 		return false;
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, Owner owner) {
+	public boolean Deposit(double inCash, IAccount account, Owner owner) {
 		return bank.Deposit(inCash, account, owner);
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, String pin) {
+	public boolean Deposit(double inCash, IAccount account, String pin) {
 		return false;
-	}	
+	}
+
 }

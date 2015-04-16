@@ -16,13 +16,13 @@ public class CashMachine implements IWithdraw {
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, Owner owner) {
+	public boolean Withdraw(double outCash, IAccount account, Owner owner) {
 		//Ignore
 		return false;
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, String pin) {
+	public boolean Withdraw(double outCash, IAccount account, String pin) {
 		if (cashAmount - outCash >= 0) {
 			return bank.Withdraw(outCash, account, pin);
 		} else {

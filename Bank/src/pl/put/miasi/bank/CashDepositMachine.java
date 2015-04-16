@@ -16,12 +16,12 @@ public class CashDepositMachine implements IDeposit {
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, Owner owner) {
+	public boolean Deposit(double inCash, IAccount account, Owner owner) {
 		return false;
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, String pin) {
+	public boolean Deposit(double inCash, IAccount account, String pin) {
 		return bank.Deposit(inCash, account, pin);
 	}
 

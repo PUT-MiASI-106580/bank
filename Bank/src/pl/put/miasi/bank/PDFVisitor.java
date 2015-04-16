@@ -6,12 +6,6 @@ import java.util.Map;
 public class PDFVisitor implements Visitor {
 
 	@Override
-	public HistoryEntry visit(HistoryEntry entry) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public FullHistory accept(FullHistory fullHistory) {
 		Map<Date, Registry> history = fullHistory.account.getHistory();
 		

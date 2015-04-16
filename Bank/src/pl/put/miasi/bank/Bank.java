@@ -39,15 +39,15 @@ public class Bank implements IAuthorization, IBank{
 		return accounts.createAccount(owner);
 	}
 	
-	public boolean RemoveAccount(Account account, String pin){
+	public boolean RemoveAccount(IAccount account, String pin){
 		return RemoveAccount(account, pin, null);
 	}
 	
-	public boolean RemoveAccount(Account account, Owner owner){
+	public boolean RemoveAccount(IAccount account, Owner owner){
 		return RemoveAccount(account, null, owner);
 	}
 	
-	private boolean RemoveAccount(Account account, String pin, Owner owner){
+	private boolean RemoveAccount(IAccount account, String pin, Owner owner){
 		if(pin != null)
 		{
 			if( Authorization(account,pin) == false ){
@@ -68,7 +68,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Authorization(Account account, String pin) {
+	public boolean Authorization(IAccount account, String pin) {
 		if( accounts != null ){
 			return accounts.Authorization(account, pin);
 		}
@@ -76,7 +76,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Authorization(Account account, Owner owner) {
+	public boolean Authorization(IAccount account, Owner owner) {
 		if( accounts != null ){
 			return accounts.Authorization(account, owner);
 		}
@@ -84,7 +84,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, Owner owner) {
+	public boolean Withdraw(double outCash, IAccount account, Owner owner) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, owner) == true){
 				account.withdraw(outCash);
@@ -95,7 +95,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Withdraw(double outCash, Account account, String pin) {
+	public boolean Withdraw(double outCash, IAccount account, String pin) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, pin)){
 				account.withdraw(outCash);
@@ -106,7 +106,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, Owner owner) {
+	public boolean Deposit(double inCash, IAccount account, Owner owner) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, owner) == true){
 				account.deposit(inCash);
@@ -117,7 +117,7 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Deposit(double inCash, Account account, String pin) {
+	public boolean Deposit(double inCash, IAccount account, String pin) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, pin) == true){
 				account.deposit(inCash);
