@@ -9,17 +9,17 @@ public class Transfer {
 
 	private final Bank from;
 	private final Bank to;
-	private final Account fromAccount;
-	private final Account toAccount;
+	private final IAccount fromAccount;
+	private final IAccount toAccount;
 	private final double amount;
 	private final String title;
 	
-	public Transfer(Bank from, Bank to, Account fromAccount, Account toAccount,
+	public Transfer(Bank from, Bank to, IAccount fromAccount, IAccount toAccount,
 			double amount) {
 		this(from, to, fromAccount, toAccount, amount, null);
 	}
 	
-	public Transfer(Bank from, Bank to, Account fromAccount, Account toAccount,
+	public Transfer(Bank from, Bank to, IAccount fromAccount, IAccount toAccount,
 			double amount, String title) {
 		this.from = from;
 		this.to = to;
@@ -37,11 +37,11 @@ public class Transfer {
 		return to;
 	}
 
-	public Account getFromAccount() {
+	public IAccount getFromAccount() {
 		return fromAccount;
 	}
 
-	public Account getToAccount() {
+	public IAccount getToAccount() {
 		return toAccount;
 	}
 

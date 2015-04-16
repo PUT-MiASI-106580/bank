@@ -81,11 +81,11 @@ public class Account implements IAccount{
 		}
 	}
 
-	public double getSaldo() {
+	public double getBalance() {
 		return balance;
 	}
 
-	public void setSaldo(double balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 
@@ -93,6 +93,7 @@ public class Account implements IAccount{
 		return owner;
 	}
 
+	@Override
 	public Map<Date, Registry> getHistory() {
 		return history;
 	}

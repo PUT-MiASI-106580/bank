@@ -164,5 +164,14 @@ public class Accounts implements IAuthorization {
 		}
 		return false;
 	}
+
+	public int getAccountIndex(IAccount account) {
+		return accounts.indexOf(account);
+	}
+
+	public void changeAccountType(int index, AbstractAccountDecorator debitAccount) {
+		accounts.remove(index);
+		accounts.add(index, debitAccount);		
+	}
 	
 }

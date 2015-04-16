@@ -39,6 +39,15 @@ public class Bank implements IAuthorization, IBank{
 		return accounts.createAccount(owner);
 	}
 	
+	@Override
+	public void addBasicDebitTo(IAccount account, Owner owner) {		
+		int index =  accounts.getAccountIndex(account);
+		if (index < 0 || !Authorization(account, owner)) {
+			return;
+		}
+		
+	}
+	
 	public boolean RemoveAccount(IAccount account, String pin){
 		return RemoveAccount(account, pin, null);
 	}

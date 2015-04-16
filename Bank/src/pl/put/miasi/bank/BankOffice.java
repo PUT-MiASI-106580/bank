@@ -59,4 +59,9 @@ public class BankOffice implements IAuthorization, IBank {
 		return false;
 	}
 
+	@Override
+	public void addBasicDebitTo(IAccount account, Owner owner) {		
+		bank.addBasicDebitTo(account, owner);
+	}
+
 }

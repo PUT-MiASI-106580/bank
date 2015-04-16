@@ -48,18 +48,18 @@ public class AccountTest {
 	 */
 	@Test
 	public void testWplata() throws IllegalArgumentException{
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double deposit = rand.nextInt()*rand.nextDouble();
 		if (deposit < 0) {
 			deposit *= -1;
 		}		
 		account.deposit(deposit);
-		assertEquals(deposit, account.getSaldo(), 0.01);
+		assertEquals(deposit, account.getBalance(), 0.01);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void testWplataException() {
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double deposit = rand.nextInt()*rand.nextDouble();
 		if (deposit >= 0) {
 			deposit *= -1;
@@ -74,21 +74,21 @@ public class AccountTest {
 	 */
 	@Test
 	public void testWyplata() {
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
 		account.deposit(in);
-		double initialSaldo = account.getSaldo();
+		double initialSaldo = account.getBalance();
 		double withdraw = rand.nextInt(3000)*rand.nextDouble();
 		if (withdraw < 0) {
 			withdraw *= -1;
 		}		
 		account.withdraw(withdraw);
-		assertEquals(initialSaldo - withdraw, account.getSaldo(), 0.01);
+		assertEquals(initialSaldo - withdraw, account.getBalance(), 0.01);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void testWyplataArgumentException() {
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
 		account.deposit(in);
 		double withdraw = rand.nextInt(3000)*rand.nextDouble();
@@ -102,7 +102,7 @@ public class AccountTest {
 	
 	@Test(expected=IllegalStateException.class)
 	public void testWyplataNotEnoughMoney() {
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
 		account.deposit(in);
 		double withdraw = rand.nextInt(2000)*rand.nextDouble() + 4000;
@@ -115,16 +115,16 @@ public class AccountTest {
 	
 	//test do not work without decorator implemented
 	public void testWyplataWithDebit() {
-		assertEquals(0, account.getSaldo(), 0.01);
+		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 2000;		
 		account.deposit(in);
-		double initialSaldo = account.getSaldo();
+		double initialSaldo = account.getBalance();
 		double withdraw = rand.nextInt(2000)*rand.nextDouble() + 4000;
 		if (withdraw < 0) {
 			withdraw *= -1;
 		}		
 		account.withdraw(withdraw);
-		assertEquals(initialSaldo - withdraw, account.getSaldo(), 0.01);
+		assertEquals(initialSaldo - withdraw, account.getBalance(), 0.01);
 	}
 	
 	@Test

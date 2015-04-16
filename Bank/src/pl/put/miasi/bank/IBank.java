@@ -5,4 +5,6 @@ public interface IBank extends IAuthorization, IDeposit, IWithdraw {
 
 	public String getId();
 	public boolean CreateAccount(Owner owner);
+	
+	void addBasicDebitTo(IAccount account, Owner owner);
 }
