@@ -2,18 +2,16 @@ package pl.put.miasi.bank;
 
 import java.util.Date;
 
-import pl.put.miasi.bank.Konto.Wpis;
-
 public class HistoryEntry implements ReportElement<HistoryEntry>{
-	private final Wpis wpis;
+	private final Registry registry;
 	private final Date date;
-	public HistoryEntry(Wpis wpis, Date date) {
+	public HistoryEntry(Registry registry, Date date) {
 		super();
-		this.wpis = wpis;
+		this.registry = registry;
 		this.date = date;
 	}
-	public Wpis getWpis() {
-		return wpis;
+	public Registry getWpis() {
+		return registry;
 	}
 	public Date getDate() {
 		return date;
@@ -21,11 +19,11 @@ public class HistoryEntry implements ReportElement<HistoryEntry>{
 	
 	public String doReport() {
 		StringBuilder b = new StringBuilder();
-		b.append(RaportUtils.ACCOUNT_TAG_BEGIN).append(wpis.getOperacja()).
+		b.append(RaportUtils.ACCOUNT_TAG_BEGIN).append(registry.getOperation());
 		return null;		
 	}
 	@Override
-	public HistoryEntry accept(Report report) {		
+	public HistoryEntry accept(IReport report) {		
 		return null;
 	}
 	

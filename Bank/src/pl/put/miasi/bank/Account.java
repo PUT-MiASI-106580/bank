@@ -16,21 +16,7 @@ import java.util.Random;
  */
 public class Account {
 
-	static class Registry {
-		private final Operation operation;
-		private final List<Object> params;		
-		public Registry(Operation operation, Object... params) {
-			this.operation = operation;
-			this.params = new ArrayList<Object>(Arrays.asList(params));
-		}
-		public Operation getOperation() {
-			return operation;
-		}
-		public List<Object> getParams() {
-			return params;
-		}
-		
-	}
+
 	
 	private double balance;
 	
