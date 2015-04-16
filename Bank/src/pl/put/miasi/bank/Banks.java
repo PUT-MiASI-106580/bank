@@ -9,9 +9,9 @@ import java.util.List;
  * 
  */
 
-public class Banki {
+public class Banks {
 	
-	private ArrayList<Bank> banki;
+	private ArrayList<Bank> banks;
 	
 	private int prefixLength = 8;
 
@@ -39,8 +39,8 @@ public class Banki {
 		{
 			String tmp = fill + Integer.toString(prefixGenerator);
 			finishLoop = true;
-			for( int i = 0; i < banki.size(); i++ ){
-				if( banki.get(i).getId().equals(tmp) ){
+			for( int i = 0; i < banks.size(); i++ ){
+				if( banks.get(i).getId().equals(tmp) ){
 					finishLoop = false;
 				}
 			}
@@ -79,30 +79,30 @@ public class Banki {
 		
 	}
 
-	public Banki() {
+	public Banks() {
 		this.prefix = new String();
 		prefixGenerator = 0;
 	}
 
-	public Banki(String prefix) {
+	public Banks(String prefix) {
 		this.prefix = prefix;
 		prefixGenerator = 0;
 	}
 
-	public Banki(ArrayList<Bank> banki) {
-		this.banki = banki;
+	public Banks(ArrayList<Bank> banks) {
+		this.banks = banks;
 		prefixGenerator = 0;
 	}
 
-	public Banki(String prefix, ArrayList<Bank> banki) {
+	public Banks(String prefix, ArrayList<Bank> banks) {
 		this.prefix = prefix;
-		this.banki = banki;
+		this.banks = banks;
 		prefixGenerator = 0;
 	}
 	
 	public boolean addBank( Bank bank )
 	{
-		return banki.add(bank);
+		return banks.add(bank);
 	}
 
 	public int getPrefixLength() {
@@ -113,8 +113,8 @@ public class Banki {
 		this.prefixLength = prefixLength;
 	}
 
-	public List<Bank> getBanki() {
-		return banki;
+	public List<Bank> getBanks() {
+		return banks;
 	}
 	
 	

@@ -4,27 +4,27 @@ package pl.put.miasi.bank;
  * @author Miko�aj Ignaszak
  * 
  */
-public class Bankomat implements IWyplata {
+public class CashMachine implements IWithdraw {
 
 	private double cashAmount;
 
 	private Bank bank;
 
-	public Bankomat(double cashAmount, Bank bank) {
+	public CashMachine(double cashAmount, Bank bank) {
 		this.cashAmount = cashAmount;
 		this.bank = bank;
 	}
 
 	@Override
-	public boolean Wyplata(double outCash, Konto account, Wlasciciel owner) {
+	public boolean Withdraw(double outCash, Account account, Owner owner) {
 		//Ignore
 		return false;
 	}
 
 	@Override
-	public boolean Wyplata(double outCash, Konto account, String pin) {
+	public boolean Withdraw(double outCash, Account account, String pin) {
 		if (cashAmount - outCash >= 0) {
-			return bank.Wyplata(outCash, account, pin);
+			return bank.Withdraw(outCash, account, pin);
 		} else {
 			throw new IllegalStateException("Not enough money");
 		}

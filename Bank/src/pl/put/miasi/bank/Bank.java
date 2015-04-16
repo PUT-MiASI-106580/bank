@@ -13,13 +13,13 @@ w calym projekcie nalezy przetlumaczyc plinglish na english
 public class Bank implements IAuthorization, IBank{
 	private String Id;
 	
-	private Konta konta;
+	private Accounts accounts;
 
 	//TODO: implement
 	
 	public Bank(String prefix){
 		Id = prefix;
-		konta = new Konta( prefix );
+		accounts = new Accounts( prefix );
 	}
 
 	public String getId() {
@@ -30,24 +30,24 @@ public class Bank implements IAuthorization, IBank{
 		this.Id = Id;
 	}
 	
-	public boolean CreateKonto(Wlasciciel wlasciciel){
+	public boolean CreateAccount(Owner owner){
 		
-		if( konta == null )
+		if( accounts == null )
 		{
-			konta = new Konta( this.Id );
+			accounts = new Accounts( this.Id );
 		}
-		return konta.createKonto(wlasciciel);
+		return accounts.createAccount(owner);
 	}
 	
-	public boolean RemoveKonto(Konto account, String pin){
-		return RemoveKonto(account, pin, null);
+	public boolean RemoveAccount(Account account, String pin){
+		return RemoveAccount(account, pin, null);
 	}
 	
-	public boolean RemoveKonto(Konto account, Wlasciciel owner){
-		return RemoveKonto(account, null, owner);
+	public boolean RemoveAccount(Account account, Owner owner){
+		return RemoveAccount(account, null, owner);
 	}
 	
-	private boolean RemoveKonto(Konto account, String pin, Wlasciciel owner){
+	private boolean RemoveAccount(Account account, String pin, Owner owner){
 		if(pin != null)
 		{
 			if( Authorization(account,pin) == false ){
@@ -68,56 +68,56 @@ public class Bank implements IAuthorization, IBank{
 	}
 
 	@Override
-	public boolean Authorization(Konto account, String pin) {
-		if( konta != null ){
-			return konta.Authorization(account, pin);
+	public boolean Authorization(Account account, String pin) {
+		if( accounts != null ){
+			return accounts.Authorization(account, pin);
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Authorization(Konto account, Wlasciciel owner) {
-		if( konta != null ){
-			return konta.Authorization(account, owner);
+	public boolean Authorization(Account account, Owner owner) {
+		if( accounts != null ){
+			return accounts.Authorization(account, owner);
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Wyplata(double outCash, Konto account, Wlasciciel owner) {
-		if( konta != null ){
-			if( konta.Authorization(account, owner) == true){
-				return account.Wyplata(outCash);
+	public boolean Withdraw(double outCash, Account account, Owner owner) {
+		if( accounts != null ){
+			if( accounts.Authorization(account, owner) == true){
+				return account.Withdraw(outCash);
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Wyplata(double outCash, Konto account, String pin) {
-		if( konta != null ){
-			if( konta.Authorization(account, pin) == true){
-				return account.Wyplata(outCash);
+	public boolean Withdraw(double outCash, Account account, String pin) {
+		if( accounts != null ){
+			if( accounts.Authorization(account, pin) == true){
+				return account.Withdraw(outCash);
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Wplata(double inCash, Konto account, Wlasciciel owner) {
-		if( konta != null ){
-			if( konta.Authorization(account, owner) == true){
-				return account.Wplata(inCash);
+	public boolean Deposit(double inCash, Account account, Owner owner) {
+		if( accounts != null ){
+			if( accounts.Authorization(account, owner) == true){
+				return account.Deposit(inCash);
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Wplata(double inCash, Konto account, String pin) {
-		if( konta != null ){
-			if( konta.Authorization(account, pin) == true){
-				return account.Wplata(inCash);
+	public boolean Deposit(double inCash, Account account, String pin) {
+		if( accounts != null ){
+			if( accounts.Authorization(account, pin) == true){
+				return account.Deposit(inCash);
 			}
 		}
 		return false;

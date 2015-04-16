@@ -4,6 +4,6 @@ package pl.put.miasi.bank;
  * @author Mikołaj Szychowiak
  *
  */
-public class Wlasciciel {
+public class Owner {
 	//TODO: implement
 }

@@ -6,7 +6,7 @@ package pl.put.miasi.bank;
  */
 public interface IAuthorization {
 
-	abstract boolean Authorization(Konto account, String pin);
+	abstract boolean Authorization(Account account, String pin);
 	
-	abstract boolean Authorization(Konto account, Wlasciciel owner);
+	abstract boolean Authorization(Account account, Owner owner);
 }

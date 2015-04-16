@@ -8,9 +8,9 @@ import java.util.List;
  * @author Ryszard Wojtkowiak
  * 
  */
-public class Konta implements IAuthorization {
+public class Accounts implements IAuthorization {
 
-	private ArrayList<Konto> konta;
+	private ArrayList<Account> accounts;
 
 	private String prefix;
 	
@@ -40,8 +40,8 @@ public class Konta implements IAuthorization {
 		{
 			String tmp = fill + Integer.toString(IDGenerator);
 			finishLoop = true;
-			for( int i = 0; i < konta.size(); i++ ){
-				if( konta.get(i).getId().equals(tmp) ){
+			for( int i = 0; i < accounts.size(); i++ ){
+				if( accounts.get(i).getId().equals(tmp) ){
 					finishLoop = false;
 				}
 			}
@@ -70,10 +70,10 @@ public class Konta implements IAuthorization {
 		throw new Exception("Unreachable code getId");
 	}
 	
-	public boolean createKonto(Wlasciciel wlasciciel){
-		Konto konto = new Konto(wlasciciel);
+	public boolean createAccount(Owner owner){
+		Account account = new Account(owner);
 		try {
-			konto.setId(this.getId());
+			account.setId(this.getId());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -100,33 +100,33 @@ public class Konta implements IAuthorization {
 		this.prefix = prefix;
 	}
 
-	public List<Konto> getKonta() {
-		return konta;
+	public List<Account> getAccounts() {
+		return accounts;
 	}
 
-	public void setKonta(ArrayList<Konto>konta) {
-		this.konta = konta;
+	public void setAccounts(ArrayList<Account>accounts) {
+		this.accounts = accounts;
 	}
 
-	public Konta() {
+	public Accounts() {
 		this.prefix = new String();
-		this.konta = new ArrayList<Konto>();
+		this.accounts = new ArrayList<Account>();
 		IDGenerator = 0;
 	}
 
-	public Konta(String prefix) {
+	public Accounts(String prefix) {
 		this.prefix = prefix;
 		IDGenerator = 0;
 	}
 
-	public Konta(ArrayList<Konto> konta) {
-		this.konta = konta;
+	public Accounts(ArrayList<Account> accounts) {
+		this.accounts = accounts;
 		IDGenerator = 0;
 	}
 
-	public Konta(String prefix, ArrayList<Konto> konta) {
+	public Accounts(String prefix, ArrayList<Account> accounts) {
 		this.prefix = prefix;
-		this.konta = konta;
+		this.accounts = accounts;
 		IDGenerator = 0;
 	}
 
@@ -138,17 +138,17 @@ public class Konta implements IAuthorization {
 		this.prefixLength = prefixLength;
 	}
 	
-	public boolean accountExists( Konto account ){
-		if( konta != null ){
-			return konta.contains(account);
+	public boolean accountExists( Account account ){
+		if( accounts != null ){
+			return accounts.contains(account);
 		}
 		return false;
 	}
 
 	@Override
-	public boolean Authorization(Konto account, String pin) {
-		if( konta != null ){
-			if(konta.contains(account) == true){
+	public boolean Authorization(Account account, String pin) {
+		if( accounts != null ){
+			if(accounts.contains(account) == true){
 				return account.getPin().equals(pin);
 			}
 		}
@@ -156,10 +156,10 @@ public class Konta implements IAuthorization {
 	}
 
 	@Override
-	public boolean Authorization(Konto account, Wlasciciel owner) {
-		if( konta != null ){
-			if(konta.contains(account) == true){
-				return account.getWlasciciel().contains(owner);
+	public boolean Authorization(Account account, Owner owner) {
+		if( accounts != null ){
+			if(accounts.contains(account) == true){
+				return account.getOwner().contains(owner);
 			}
 		}
 		return false;
