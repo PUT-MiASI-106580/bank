@@ -113,10 +113,9 @@ public class AccountTest {
 		fail("Exception expected");
 	}
 	
-	@Test
+	//test do not work without decorator implemented
 	public void testWyplataWithDebit() {
 		assertEquals(0, account.getSaldo(), 0.01);
-		account.setDebet(3000);
 		double in = rand.nextInt(3000) + 2000;		
 		account.deposit(in);
 		double initialSaldo = account.getSaldo();

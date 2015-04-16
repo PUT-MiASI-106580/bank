@@ -24,9 +24,7 @@ public class Account {
 	
 	private final ArrayList<Owner> owner;
 	
-	private final Map<Date, Registry> history;//co zamiast inta?
-
-	private double debet;
+	private final Map<Date, Registry> history;//co zamiast inta?	
 	
 	private String pin;
 	
@@ -75,7 +73,7 @@ public class Account {
 	}
 	
 	public void withdraw(double ammount) {
-		if (ammount >=0 && balance - ammount >= -debet) {
+		if (ammount >=0 && balance - ammount >= 0) {
 			history.put(new Date(System.currentTimeMillis()), new Registry(Operation.WITHDRAW, ammount));
 			balance -= ammount;
 		} else if (ammount >=0) {
@@ -101,14 +99,6 @@ public class Account {
 		return history;
 	}
 
-	public double getDebet() {
-		return debet;
-	}
-
-	public void setDebet(double debet) {
-		this.debet = debet;
-	}
-
 	public String getId() {
 		return Id;
 	}
@@ -123,20 +113,7 @@ public class Account {
 
 	public void setPin(String pin) {
 		this.pin = pin;
-	}
-	
-	public boolean Deposit(double Cash){
-		this.balance += Cash;
-		return true;
-	}
-	public boolean Withdraw(double Cash){
-		if( this.balance - Cash > - this.debet )
-		{
-			balance -= Cash;
-			return true;
-		}
-		return false;
-	}
+	}	
 	
 	private List<HistoryEntry> convertHistoryToList() {
 		List<HistoryEntry> entries = new ArrayList<>();

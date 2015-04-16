@@ -87,7 +87,8 @@ public class Bank implements IAuthorization, IBank{
 	public boolean Withdraw(double outCash, Account account, Owner owner) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, owner) == true){
-				return account.Withdraw(outCash);
+				account.withdraw(outCash);
+				return true;
 			}
 		}
 		return false;
@@ -96,8 +97,9 @@ public class Bank implements IAuthorization, IBank{
 	@Override
 	public boolean Withdraw(double outCash, Account account, String pin) {
 		if( accounts != null ){
-			if( accounts.Authorization(account, pin) == true){
-				return account.Withdraw(outCash);
+			if( accounts.Authorization(account, pin)){
+				account.withdraw(outCash);
+				return true;
 			}
 		}
 		return false;
@@ -107,7 +109,8 @@ public class Bank implements IAuthorization, IBank{
 	public boolean Deposit(double inCash, Account account, Owner owner) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, owner) == true){
-				return account.Deposit(inCash);
+				account.deposit(inCash);
+				return true;
 			}
 		}
 		return false;
@@ -117,7 +120,8 @@ public class Bank implements IAuthorization, IBank{
 	public boolean Deposit(double inCash, Account account, String pin) {
 		if( accounts != null ){
 			if( accounts.Authorization(account, pin) == true){
-				return account.Deposit(inCash);
+				account.deposit(inCash);
+				return true;
 			}
 		}
 		return false;
