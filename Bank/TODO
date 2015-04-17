@@ -2,15 +2,34 @@ Na kiedys:
 
 1) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
 2) okomentowanie kodu/kod samokomentujacy sie
+3) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
+4) dokumentacja jak dziala system
 
 Na teraz:
 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta)
 2) aktualnie brak powiazan z KIR'em i przelewami w banku
 3) lista banków przy tworzeniu banków tworzy filtr dla przelewów dla danego banku
-4) zaimplementowac filtr dla przelewow
-5) filtry anty-fraudingowe ( powyzej 20 tys ) 
-6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie
+MS 4) zaimplementowac filtr dla przelewow
+5) filtry anty-fraudingowe ( powyzej 20 tys ) ( Wzorzec: Chain of responsibility )
+6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie ( Wzorzec: Chain of responsibility )
+7) implementacja funkcji w Banks pozwalajaca dobrac sie do konkretnego banku po ID
 
 x) testy integracyjne
 
+WIEDZA OGLOLNA:
 
+KIR jest singletonem
+
+KIR ma liste bankow Banks
+
+Bank ma liste kont
+
+Klasy Banks i Accounts zostaly dodane by agregowac banki i konta i generowac dla nich prefixy i ID
+
+Account jest w pelni identyfikowany przez numer konta na ktory sklada sie 8 cyfr Bank.prefix i Accont.ID
+
+KIR otrzymujac paczke wykorzystuje chain of responsibility do rodzielania na paczki dla poszczegolnych bankow, a nastepnie dla tych paczek uzywa filtrow przy pomocy chain of responsibility
+
+WIEDZA OBECNA ( moze ulec zminanie )
+
+Konto ma tylko swoje ID, Bank ma swoj prefix i ma referencje do konta
