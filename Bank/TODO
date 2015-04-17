@@ -1,0 +1,15 @@
+Na kiedys:
+
+1) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
+2) okomentowanie kodu/kod samokomentujacy sie
+
+Na teraz:
+1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta)
+2) aktualnie brak powiazan z KIR'em i przelewami w banku
+3) lista banków przy tworzeniu banków tworzy filtr dla przelewów dla danego banku
+4) zaimplementowac filtr dla przelewow
+5) filtry anty-fraudingowe ( powyzej 20 tys ) 
+6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie
+
+x) testy integracyjne
+
