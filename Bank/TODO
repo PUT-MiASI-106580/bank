@@ -33,3 +33,5 @@ KIR otrzymujac paczke wykorzystuje chain of responsibility do rodzielania na pac
 WIEDZA OBECNA ( moze ulec zminanie )
 
 Konto ma tylko swoje ID, Bank ma swoj prefix i ma referencje do konta
+
+123
