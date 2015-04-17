@@ -61,4 +61,10 @@ public final class KIR {
 		
 	}
 	
+	public Bank createBank() {
+		bankList.createBank();
+		List<Bank> banks = bankList.getBanks(); 
+		return banks.get(banks.size());
+	}
+	
 }

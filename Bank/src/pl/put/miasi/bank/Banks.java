@@ -19,7 +19,7 @@ public class Banks {
 	
 	private String prefix;
 
-	private String getId() throws Exception
+	private String generateId() throws Exception
 	{
 		prefixGenerator++;
 		
@@ -71,9 +71,8 @@ public class Banks {
 	
 	public void createBank(){
 		try {
-			Bank bank = new Bank(this.getId());
+			Bank bank = new Bank(this.generateId());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
