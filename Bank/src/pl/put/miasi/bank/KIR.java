@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import pl.put.miasi.bank.Banks.BankFilter;
+
 /**
  * @author Mikołaj Szychowiak
  *
@@ -15,11 +17,14 @@ public final class KIR {
 	
 	private final Banks bankList;
 	
+	private final List<BankFilter> filtersForBanks;
+	
 	private Map<Bank, List<Transfer>> packages;		
 	
 	private KIR() {
 		bankList = new Banks();	
 		createNewPackages();
+		filtersForBanks = new ArrayList<>();
 	}
 	
 	private void createNewPackages() {
@@ -62,9 +67,9 @@ public final class KIR {
 	}
 	
 	public Bank createBank() {
-		bankList.createBank(this);
-		List<Bank> banks = bankList.getBanks(); 
-		return banks.get(banks.size());
+		filtersForBanks.add(bankList.createBank(this));		
+		List<Bank> banks = bankList.getBanks(); 		
+		return banks.get(banks.size() - 1);
 	}
 	
 }

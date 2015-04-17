@@ -1,6 +1,7 @@
 package pl.put.miasi.bank;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -10,6 +11,39 @@ import java.util.List;
  */
 
 public class Banks {
+	
+	static class BankFilter implements Filter<List<Transfer>> {
+
+		private List<Transfer> toThisBank;
+		private final String id;
+		
+		public BankFilter(String id) {
+			this.id = id;
+			toThisBank = new ArrayList<>();
+		}
+		
+		@Override
+		public List<Transfer> executeFilter(List<Transfer> toFilter) {
+			List<Transfer> result = new ArrayList<>();
+			for (Transfer t : toFilter) {
+				if (id.startsWith(t.getTo().getId())) {
+					result.add(t);
+				}
+			}
+			for (Transfer t : result) {
+				toFilter.remove(t);
+			}
+			toThisBank.addAll(result);
+			return toFilter;
+		}
+		
+		public List<Transfer> getFilteredPackage() {
+			List<Transfer> result = new ArrayList<>();
+			Collections.copy(result, toThisBank);
+			return result;
+		}
+		
+	}
 	
 	private ArrayList<Bank> banks;
 	
@@ -80,14 +114,15 @@ public class Banks {
 		
 	}
 	
-	public void createBank(KIR kir){
+	public BankFilter createBank(KIR kir){
 		try {
 			Bank bank = new Bank(this.generateId(), kir);
 			banks.add(bank);
+			return new BankFilter(bank.getId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		return null;
 	}
 
 	public Banks() {
