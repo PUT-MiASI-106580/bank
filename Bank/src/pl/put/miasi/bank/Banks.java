@@ -69,9 +69,21 @@ public class Banks {
 		throw new Exception("Unreachable code getId");
 	}
 	
+	@Deprecated
 	public void createBank(){
 		try {
-			Bank bank = new Bank(this.generateId());
+			@SuppressWarnings("unused")
+			Bank bank = new Bank(this.generateId(), null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void createBank(KIR kir){
+		try {
+			Bank bank = new Bank(this.generateId(), kir);
+			banks.add(bank);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
