@@ -14,12 +14,14 @@ public class Bank implements IAuthorization, IBank{
 	private String Id;
 	
 	private Accounts accounts;
-
-	//TODO: implement
 	
-	public Bank(String prefix){
+	private final KIR kir;
+
+	
+	public Bank(String prefix, KIR kir) {
 		Id = prefix;
 		accounts = new Accounts( prefix );
+		this.kir = kir;
 	}
 
 	public String getId() {

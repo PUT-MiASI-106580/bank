@@ -62,7 +62,7 @@ public final class KIR {
 	}
 	
 	public Bank createBank() {
-		bankList.createBank();
+		bankList.createBank(this);
 		List<Bank> banks = bankList.getBanks(); 
 		return banks.get(banks.size());
 	}
