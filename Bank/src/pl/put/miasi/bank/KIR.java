@@ -19,12 +19,15 @@ public final class KIR {
 	
 	private final List<BankFilter> filtersForBanks;
 	
-	private volatile Map<Bank, List<Transfer>> packages;		
+	private volatile Map<Bank, List<Transfer>> packages;
+
+	private AbstractAntiFraudingFilter antiFraudingFilters;		
 	
 	private KIR() {
 		bankList = new Banks();	
 		createNewPackages();
 		filtersForBanks = new ArrayList<>();
+		antiFraudingFilters = AbstractAntiFraudingFilter.createFilters();
 	}
 	
 	private void createNewPackages() {
@@ -84,7 +87,7 @@ public final class KIR {
 	
 	public void addTransfersPackage( List<Transfer> packages )
 	{
-		
+		antiFraudingFilters.executeFilter(packages);
 		for (Filter<List<Transfer>> f : filtersForBanks) {
 			Bank b = bankList.getBank(((BankFilter) f).getId());
 			this.packages.get(b).addAll(f.executeFilter(packages));
@@ -93,7 +96,7 @@ public final class KIR {
 	
 	public void processTransfersPackage()
 	{
-		/*TO implements*/
+		
 	}
 	
 }

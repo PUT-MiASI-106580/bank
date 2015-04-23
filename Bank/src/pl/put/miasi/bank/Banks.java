@@ -130,6 +130,7 @@ public class Banks {
 
 	public Banks() {
 		this.prefix = new String();
+		this.banks = new ArrayList<>();
 		prefixGenerator = 0;
 	}
 

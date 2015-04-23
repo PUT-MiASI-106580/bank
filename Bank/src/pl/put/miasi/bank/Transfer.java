@@ -52,5 +52,23 @@ public class Transfer {
 	public String getTitle() {
 		return title;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Transfer)) {
+			return false;
+		}
+		Transfer oth = (Transfer) obj;
+		if (oth.amount != this.amount) {
+			return false;
+		}
+		if (!(oth.from.getId().equals(this.from.getId()))) {
+			return false;
+		}
+		if (!(oth.to.getId().equals(this.to.getId()))) {
+			return false;
+		} 
+		return true;
+	}
 
 }
