@@ -163,5 +163,15 @@ public class Banks {
 		return banks;
 	}
 	
+	public Bank getBank( String Id )
+	{
+		for( int i = 0; i < banks.size(); i++ ){
+			if( banks.get(i).getId().equals(Id) ){
+				return banks.get(i);
+			}
+		}
+		return null;
+	}
+	
 	
 }

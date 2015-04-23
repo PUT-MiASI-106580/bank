@@ -6,7 +6,7 @@ Na kiedys:
 4) dokumentacja jak dziala system
 
 Na teraz:
-1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta)
+RWoj 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta)
 2) aktualnie brak powiazan z KIR'em i przelewami w banku
 3) lista bank�w przy tworzeniu bank�w tworzy filtr dla przelew�w dla danego banku
 MSzych 4) zaimplementowac filtr dla przelewow
@@ -14,7 +14,7 @@ MSzych 4) zaimplementowac filtr dla przelewow
 6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie ( Wzorzec: Chain of responsibility )
 RWoj 7) implementacja funkcji w Banks pozwalajaca dobrac sie do konkretnego banku po ID
 
-7) testy integracyjne
+8) testy integracyjne
 
 WIEDZA OGLOLNA:
 
