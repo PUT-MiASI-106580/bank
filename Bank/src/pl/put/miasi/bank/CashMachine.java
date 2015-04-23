@@ -24,7 +24,7 @@ public class CashMachine implements IWithdraw {
 	@Override
 	public boolean Withdraw(double outCash, IAccount account, String pin) {
 		if (cashAmount - outCash >= 0) {
-			return bank.Withdraw(outCash, account, pin);
+			return bank.Withdraw(outCash, account, pin,"Withdraw in CashMachine");
 		} else {
 			throw new IllegalStateException("Not enough money");
 		}

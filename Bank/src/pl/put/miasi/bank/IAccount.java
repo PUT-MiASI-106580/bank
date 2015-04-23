@@ -5,9 +5,9 @@ import java.util.Date;
 import java.util.Map;
 
 public interface IAccount {
-	void deposit(double amount);
+	void deposit(double amount, String title);
 	
-	void withdraw(double amount);
+	void withdraw(double amount, String title);
 
 	String getPin();
 

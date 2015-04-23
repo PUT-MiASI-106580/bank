@@ -61,7 +61,7 @@ public class Account implements IAccount{
 		history = new HashMap<Date, Registry>();		
 	}	
 	
-	public void deposit(double ammount) throws IllegalArgumentException {
+	public void deposit(double ammount, String string) throws IllegalArgumentException {
 		if (ammount >=0) {
 			history.put(new Date(System.currentTimeMillis()), new Registry(Operation.DEPOSIT, ammount));
 			balance += ammount;
@@ -70,7 +70,7 @@ public class Account implements IAccount{
 		}
 	}
 	
-	public void withdraw(double ammount) {
+	public void withdraw(double ammount, String string) {
 		if (ammount >=0 && balance - ammount >= 0) {
 			history.put(new Date(System.currentTimeMillis()), new Registry(Operation.WITHDRAW, ammount));
 			balance -= ammount;

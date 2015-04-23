@@ -53,7 +53,7 @@ public class AccountTest {
 		if (deposit < 0) {
 			deposit *= -1;
 		}		
-		account.deposit(deposit);
+		account.deposit(deposit,"SomeDeposit");
 		assertEquals(deposit, account.getBalance(), 0.01);
 	}
 	
@@ -65,7 +65,7 @@ public class AccountTest {
 			deposit *= -1;
 			deposit -= rand.nextInt(12);
 		}		
-		account.deposit(deposit);
+		account.deposit(deposit,"SomeDeposit");
 		fail("Exception expected");
 	}
 
@@ -76,13 +76,13 @@ public class AccountTest {
 	public void testWyplata() {
 		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
-		account.deposit(in);
+		account.deposit(in,"SomeDeposit");
 		double initialSaldo = account.getBalance();
 		double withdraw = rand.nextInt(3000)*rand.nextDouble();
 		if (withdraw < 0) {
 			withdraw *= -1;
 		}		
-		account.withdraw(withdraw);
+		account.withdraw(withdraw,"SomeWithDraw");
 		assertEquals(initialSaldo - withdraw, account.getBalance(), 0.01);
 	}
 	
@@ -90,13 +90,13 @@ public class AccountTest {
 	public void testWyplataArgumentException() {
 		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
-		account.deposit(in);
+		account.deposit(in,"SomeDeposit");
 		double withdraw = rand.nextInt(3000)*rand.nextDouble();
 		if (withdraw >= 0) {
 			withdraw *= -1;
 			withdraw -= rand.nextInt(12);
 		}		
-		account.withdraw(withdraw);
+		account.withdraw(withdraw,"SomeWithDraw");
 		fail("Exception expected");
 	}
 	
@@ -104,12 +104,12 @@ public class AccountTest {
 	public void testWyplataNotEnoughMoney() {
 		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 1000;
-		account.deposit(in);
+		account.deposit(in,"SomeDeposit");
 		double withdraw = rand.nextInt(2000)*rand.nextDouble() + 4000;
 		if (withdraw < 0) {
 			withdraw *= -1;
 		}		
-		account.withdraw(withdraw);
+		account.withdraw(withdraw,"SomeWithDraw");
 		fail("Exception expected");
 	}
 	
@@ -117,20 +117,20 @@ public class AccountTest {
 	public void testWyplataWithDebit() {
 		assertEquals(0, account.getBalance(), 0.01);
 		double in = rand.nextInt(3000) + 2000;		
-		account.deposit(in);
+		account.deposit(in,"SomeDeposit");
 		double initialSaldo = account.getBalance();
 		double withdraw = rand.nextInt(2000)*rand.nextDouble() + 4000;
 		if (withdraw < 0) {
 			withdraw *= -1;
 		}		
-		account.withdraw(withdraw);
+		account.withdraw(withdraw,"SomeWithDraw");
 		assertEquals(initialSaldo - withdraw, account.getBalance(), 0.01);
 	}
 	
 	@Test
 	public void checkHistory() throws InterruptedException {
 		double in = rand.nextInt(3000) + 1000;
-		account.deposit(in);		
+		account.deposit(in,"SomeDeposit");		
 		assertEquals(1, account.getHistory().size());
 		Date d1 = (Date) account.getHistory().keySet().iterator().next();
 		Registry w = account.getHistory().get(d1);
@@ -141,7 +141,7 @@ public class AccountTest {
 			withdraw *= -1;
 		}				
 		Thread.sleep(1000);
-		account.withdraw(withdraw);		
+		account.withdraw(withdraw,"SomeWithDraw");		
 		assertEquals(2, account.getHistory().size());		
 		Set<Date> temp = account.getHistory().keySet();
 		temp.remove(d1);

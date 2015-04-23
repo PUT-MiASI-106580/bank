@@ -22,7 +22,7 @@ public class CashDepositMachine implements IDeposit {
 
 	@Override
 	public boolean Deposit(double inCash, IAccount account, String pin) {
-		return bank.Deposit(inCash, account, pin);
+		return bank.Deposit(inCash, account, pin, "Deposit in CashDepositMachine");
 	}
 
 }

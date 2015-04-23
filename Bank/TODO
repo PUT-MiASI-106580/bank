@@ -6,6 +6,10 @@ Na kiedys:
 4) dokumentacja jak dziala system
 5) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku (addTransfersPackage)
 6) dodanie implementacji kir.processTransfersPackage() ( przetworzenie paczki z danymi z transferow )
+7) omowienie co wtedy gdy przelew jest odrzucony przez KIR
+8) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
+9) Przedyskutowac: IBankOffice i IBank kotre sa prawie identyczne
+10) Przedyskutowac: klasa Account ma historie czy klasa Bank? ( bank transfersPackage vs account history )
 
 Na teraz:
 RWoj 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta) 
@@ -41,4 +45,9 @@ Konto ma tylko swoje ID, Bank ma swoj prefix i ma referencje do konta
 Przebieg otwarcia sesji:
 kir.openSession();
 kir.processTransfersPackage(); w tym momencie sesja sie konczy, i nie ma zadnej funkcji jej wywolujacej, jedynie taka potrzeba zachodzilaby w przypadku dzialania na watkach, a aktualnie mamy jeden watek
+
+Przebieg przelewu:
+Przelew mozna zrobic jedynie w oddziale banku
+Oddzial banku deleguje metode do banku ktory zwroci false jezeli autoryzacja nie powiedzie sie, w innym przypadku zwraca true, tworzy nowy transfer i modyfikuje wartosc konta.
+
 

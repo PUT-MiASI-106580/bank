@@ -11,7 +11,7 @@ public class BasicDebitAccount extends AbstractAccountDecorator {
 	}
 
 	@Override
-	public void deposit(double amount) {
+	public void deposit(double amount, String title) {
 		if (currentDebit > 0) {
 			if (amount < currentDebit) {
 				currentDebit -= amount;
@@ -21,11 +21,11 @@ public class BasicDebitAccount extends AbstractAccountDecorator {
 				currentDebit = 0;
 			}
 		}
-		account.deposit(amount);
+		account.deposit(amount, title);
 	}
 
 	@Override
-	public void withdraw(double amount) {
+	public void withdraw(double amount, String title) {
 		double ballance = account.getBalance();
 		if (amount > ballance) {
 			
@@ -34,7 +34,7 @@ public class BasicDebitAccount extends AbstractAccountDecorator {
 			amount = maxDebit >= currentDebit ? ballance : ballance
 					+ (currentDebit - maxDebit); 
 		}
-		account.withdraw(amount);
+		account.withdraw(amount, title);
 
 	}
 

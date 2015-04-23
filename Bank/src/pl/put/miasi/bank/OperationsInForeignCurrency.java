@@ -20,16 +20,16 @@ public class OperationsInForeignCurrency extends AbstractAccountDecorator {
 	}
 	
 	@Override
-	public void deposit(double amount) {
+	public void deposit(double amount, String title) {
 		double properAmount = amount * this.rate;
-		account.deposit(properAmount);
+		account.deposit(properAmount, title);
 
 	}
 
 	@Override
-	public void withdraw(double amount) {
+	public void withdraw(double amount, String title) {
 		double properAmount = amount / this.rate;
-		account.withdraw(properAmount);
+		account.withdraw(properAmount, title);
 	}
 
 }

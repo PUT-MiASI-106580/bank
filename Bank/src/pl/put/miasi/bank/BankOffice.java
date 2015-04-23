@@ -4,7 +4,7 @@ package pl.put.miasi.bank;
  * @author Miko�aj Ignaszak
  *
  */
-public class BankOffice implements IAuthorization, IBank {
+public class BankOffice implements IAuthorization, IBankOffice {
 
 	private double cashAmount;
 	
@@ -41,7 +41,7 @@ public class BankOffice implements IAuthorization, IBank {
 
 	@Override
 	public boolean Withdraw(double outCash, IAccount account, Owner owner) {
-		return bank.Deposit(outCash, account, owner);
+		return bank.Deposit(outCash, account, owner,"Withdraw in bank Office");
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class BankOffice implements IAuthorization, IBank {
 
 	@Override
 	public boolean Deposit(double inCash, IAccount account, Owner owner) {
-		return bank.Deposit(inCash, account, owner);
+		return bank.Deposit(inCash, account, owner, "Deposit in bank Office");
 	}
 
 	@Override
@@ -62,6 +62,13 @@ public class BankOffice implements IAuthorization, IBank {
 	@Override
 	public void addBasicDebitTo(IAccount account, Owner owner) {		
 		bank.addBasicDebitTo(account, owner);
+	}
+	
+	public boolean makeTransfer(IAccount fromAccount, Owner owner, Bank to, IAccount toAccount,
+			double amount, String title)
+	{
+		/*zwraca tylko czy autoryzacja sie powiodla, reszta zalezy od KIR*/
+		return bank.makeTransfer( fromAccount, owner, to, toAccount, amount, title );
 	}
 
 }
