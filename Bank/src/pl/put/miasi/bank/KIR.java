@@ -72,4 +72,24 @@ public final class KIR {
 		return banks.get(banks.size() - 1);
 	}
 	
+	public boolean deleteBank() {
+
+		return false;
+	}
+	
+	public void openSession()
+	{
+		bankList.notifyAboutSessionBegin();
+	}
+	
+	public void addTransfersPackage( List<Transfer> Package )
+	{
+		/*TO implements*/
+	}
+	
+	public void processTransfersPackage()
+	{
+		/*TO implements*/
+	}
+	
 }

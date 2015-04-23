@@ -1,4 +1,7 @@
 package pl.put.miasi.bank;
+
+import java.util.List;
+
 /**
  * 
  * @author Mikolaj Szychowiak
@@ -16,8 +19,9 @@ public class Bank implements IAuthorization, IBank{
 	private Accounts accounts;
 	
 	private final KIR kir;
-
 	
+	List<Transfer> transfersPackage;
+
 	public Bank(String prefix, KIR kir) {
 		Id = prefix;
 		accounts = new Accounts( prefix );
@@ -136,6 +140,11 @@ public class Bank implements IAuthorization, IBank{
 			}
 		}
 		return false;
+	}
+
+	public void notifyAboutSessionBegin() {
+		// TODO Auto-generated method stub
+		kir.addTransfersPackage(transfersPackage);
 	}
 	
 }

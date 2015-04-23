@@ -172,6 +172,12 @@ public class Banks {
 		}
 		return null;
 	}
+
+	public void notifyAboutSessionBegin() {
+		for( int i = 0; i < banks.size(); i++ ){
+			banks.get(i).notifyAboutSessionBegin();
+		}
+	}
 	
 	
 }
