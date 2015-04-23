@@ -22,7 +22,7 @@ MSzych 5) filtry anty-fraudingowe ( powyzej 20 tys ) ( Wzorzec: Chain of respons
 MSzych 6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie ( Wzorzec: Chain of responsibility )//done
 RWoj 7) implementacja funkcji w Banks pozwalajaca dobrac sie do konkretnego banku po ID
 
-8) testy integracyjne
+MIgn8) testy integracyjne
 
 WIEDZA OGLOLNA:
 
