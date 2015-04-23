@@ -19,7 +19,7 @@ public final class KIR {
 	
 	private final List<BankFilter> filtersForBanks;
 	
-	private Map<Bank, List<Transfer>> packages;		
+	private volatile Map<Bank, List<Transfer>> packages;		
 	
 	private KIR() {
 		bankList = new Banks();	
@@ -41,7 +41,7 @@ public final class KIR {
 		}
 		return kir;
 	}
-	
+	@Deprecated
 	public void addTransfer(Transfer p) throws IllegalArgumentException{
 		Bank to = p.getTo();
 		if (!packages.containsKey(to)) {
@@ -82,9 +82,13 @@ public final class KIR {
 		bankList.notifyAboutSessionBegin();
 	}
 	
-	public void addTransfersPackage( List<Transfer> Package )
+	public void addTransfersPackage( List<Transfer> packages )
 	{
-		/*TO implements*/
+		
+		for (Filter<List<Transfer>> f : filtersForBanks) {
+			Bank b = bankList.getBank(((BankFilter) f).getId());
+			this.packages.get(b).addAll(f.executeFilter(packages));
+		}
 	}
 	
 	public void processTransfersPackage()

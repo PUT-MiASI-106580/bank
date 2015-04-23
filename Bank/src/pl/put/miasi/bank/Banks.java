@@ -43,6 +43,9 @@ public class Banks {
 			return result;
 		}
 		
+		public String getId() {
+			return id;
+		}
 	}
 	
 	private ArrayList<Bank> banks;

@@ -16,8 +16,8 @@ RWoj 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek s
 -- bankList jest wlasciwie obserwatorem ma wszystkie informacje dlatego z bankList zrobilem obserwatora
 
 RWoj 2) aktualnie brak powiazan z KIR'em i przelewami w banku
-3) lista bank�w przy tworzeniu bank�w tworzy filtr dla przelew�w dla danego banku
-MSzych 4) zaimplementowac filtr dla przelewow
+3) lista bank�w przy tworzeniu bank�w tworzy filtr dla przelew�w dla danego banku //done
+MSzych 4) zaimplementowac filtr dla przelewow //done
 5) filtry anty-fraudingowe ( powyzej 20 tys ) ( Wzorzec: Chain of responsibility )
 6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie ( Wzorzec: Chain of responsibility )
 RWoj 7) implementacja funkcji w Banks pozwalajaca dobrac sie do konkretnego banku po ID
