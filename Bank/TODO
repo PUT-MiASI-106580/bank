@@ -1,17 +1,21 @@
-Na kiedys:
+Na kiedys DONE:
+17) Przedyskutowac: IBankOffice i IBank kotre sa prawie identyczne
+18) Przedyskutowac: klasa Account ma historie czy klasa Bank? ( bank transfersPackage vs account history )
 
-1) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
-2) okomentowanie kodu/kod samokomentujacy sie
-3) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
-4) dokumentacja jak dziala system
-5) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku (addTransfersPackage)
-6) dodanie implementacji kir.processTransfersPackage() ( przetworzenie paczki z danymi z transferow )
-7) omowienie co wtedy gdy przelew jest odrzucony przez KIR
-8) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
-9) Przedyskutowac: IBankOffice i IBank kotre sa prawie identyczne
-10) Przedyskutowac: klasa Account ma historie czy klasa Bank? ( bank transfersPackage vs account history )
+Na kiedys TODO:
 
-Na teraz:
+9) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
+10) okomentowanie kodu/kod samokomentujacy sie
+11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
+12) dokumentacja jak dziala system
+13) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku (addTransfersPackage)
+14) dodanie implementacji kir.processTransfersPackage() ( przetworzenie paczki z danymi z transferow )
+15) omowienie co wtedy gdy przelew jest odrzucony przez KIR
+16) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
+19) Powrzucac w package wszystkie klasy
+20) Zmienic historie konta tak by miala tytul i mozliwosc wprowadzenia przelewu ( Account.history )
+
+Na teraz DONE:
 RWoj 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta) 
 -- bankList jest wlasciwie obserwatorem ma wszystkie informacje dlatego z bankList zrobilem obserwatora
 
@@ -22,7 +26,12 @@ MSzych 5) filtry anty-fraudingowe ( powyzej 20 tys ) ( Wzorzec: Chain of respons
 MSzych 6) filtry anty-fraudingowe ( kilka pod rzad ) rzucenie wyjatkiem na razie ( Wzorzec: Chain of responsibility )//done
 RWoj 7) implementacja funkcji w Banks pozwalajaca dobrac sie do konkretnego banku po ID
 
+Na teraz TODO:
+
 MIgn8) testy integracyjne
+21) Dodanie Direct Injection
+22) Aktualizacja testów integracyjnych
+
 
 WIEDZA OGLOLNA:
 

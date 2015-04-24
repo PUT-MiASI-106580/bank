@@ -70,7 +70,7 @@ public class Account implements IAccount{
 		}
 	}
 	
-	public void withdraw(double ammount, String string) {
+	public void withdraw(double ammount, String title) {
 		if (ammount >=0 && balance - ammount >= 0) {
 			history.put(new Date(System.currentTimeMillis()), new Registry(Operation.WITHDRAW, ammount));
 			balance -= ammount;
