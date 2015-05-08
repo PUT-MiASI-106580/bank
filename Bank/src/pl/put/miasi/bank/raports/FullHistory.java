@@ -2,7 +2,7 @@ package pl.put.miasi.bank.raports;
 
 import pl.put.miasi.bank.accountdata.IAccount;
 
-public class FullHistory implements IReport<FullHistory> {
+public class FullHistory implements IRaport<FullHistory> {
 
 	public IAccount account;
 	

@@ -1,6 +1,6 @@
 package pl.put.miasi.bank.raports;
 
 
-public interface IReport<T> {
+public interface IRaport<T> {
 	T accept(Visitor v);
 }

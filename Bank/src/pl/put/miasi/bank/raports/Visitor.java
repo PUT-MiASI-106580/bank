@@ -5,9 +5,9 @@ public interface Visitor {
 
 	FullHistory visit(FullHistory fullHistory);
 
-	WithdrawReport visit(WithdrawReport withdrawReport);
+	WithdrawRaport visit(WithdrawRaport withdrawRaport);
 
-	DepositReport visit(DepositReport depositReport);
+	DepositRaport visit(DepositRaport depositRaport);
 
 	
 }

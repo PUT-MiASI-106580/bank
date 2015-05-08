@@ -23,7 +23,7 @@ public class PDFVisitor implements Visitor {
 	}
 
 	@Override
-	public WithdrawReport visit(WithdrawReport withdrawReport) {
+	public WithdrawRaport visit(WithdrawRaport withdrawReport) {
 		Map<Date, Registry> tmp = new HashMap<Date, Registry>();
 		
 		for(java.util.Map.Entry<Date, Registry> entry : withdrawReport.account.getHistory().entrySet())
@@ -40,7 +40,7 @@ public class PDFVisitor implements Visitor {
 	}
 
 	@Override
-	public DepositReport visit(DepositReport depositReport) {
+	public DepositRaport visit(DepositRaport depositReport) {
 		Map<Date, Registry> tmp = new HashMap<Date, Registry>();
 		
 		for(java.util.Map.Entry<Date, Registry> entry : depositReport.account.getHistory().entrySet())
