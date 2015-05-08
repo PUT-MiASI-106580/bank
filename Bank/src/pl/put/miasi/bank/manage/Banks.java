@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 import pl.put.miasi.bank.filters.Filter;
 
 /**

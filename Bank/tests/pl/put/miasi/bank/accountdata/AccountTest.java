@@ -16,7 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pl.put.miasi.bank.accountdata.Account;
-import pl.put.miasi.bank.accountdata.Operation;
+import pl.put.miasi.bank.accountdata.operations.Operation;
 import pl.put.miasi.bank.commondata.Owner;
 import pl.put.miasi.bank.commondata.Registry;
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import pl.put.miasi.bank.accountdata.Operation;
+import pl.put.miasi.bank.accountdata.operations.Operation;
 
 public class Registry {
 	private final Operation operation;

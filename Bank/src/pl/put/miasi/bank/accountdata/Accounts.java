@@ -3,8 +3,8 @@ package pl.put.miasi.bank.accountdata;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.put.miasi.bank.accountdata.operations.IAuthorization;
 import pl.put.miasi.bank.commondata.Owner;
-import pl.put.miasi.bank.facilities.IAuthorization;
 
 /**
  * 

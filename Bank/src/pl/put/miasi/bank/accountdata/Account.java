@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import pl.put.miasi.bank.accountdata.operations.Operation;
 import pl.put.miasi.bank.commondata.Owner;
 import pl.put.miasi.bank.commondata.Registry;
 

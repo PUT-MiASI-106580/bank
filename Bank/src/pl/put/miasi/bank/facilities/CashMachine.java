@@ -1,6 +1,7 @@
 package pl.put.miasi.bank.facilities;
 
 import pl.put.miasi.bank.accountdata.IAccount;
+import pl.put.miasi.bank.accountdata.operations.IWithdraw;
 import pl.put.miasi.bank.commondata.Owner;
 import pl.put.miasi.bank.manage.Bank;
 

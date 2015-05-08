@@ -1,8 +1,8 @@
 package pl.put.miasi.bank.manage;
 
 import pl.put.miasi.bank.accountdata.IAccount;
+import pl.put.miasi.bank.accountdata.operations.IAuthorization;
 import pl.put.miasi.bank.commondata.Owner;
-import pl.put.miasi.bank.facilities.IAuthorization;
 
 public interface IBank extends IAuthorization {
 	public boolean RemoveAccount(IAccount account, Owner owner);

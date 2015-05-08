@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 import pl.put.miasi.bank.filters.AbstractAntiFraudingFilter;
 import pl.put.miasi.bank.filters.Filter;
 import pl.put.miasi.bank.manage.Banks.BankFilter;

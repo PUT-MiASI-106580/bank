@@ -3,7 +3,7 @@ package pl.put.miasi.bank.filters;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 import pl.put.miasi.bank.exceptions.FraudingException;
 
 public class AntiFraudingFilter extends AbstractAntiFraudingFilter {

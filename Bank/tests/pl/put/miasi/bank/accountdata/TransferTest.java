@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import pl.put.miasi.bank.accountdata.Account;
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 import pl.put.miasi.bank.commondata.Owner;
 import pl.put.miasi.bank.manage.Bank;
 import pl.put.miasi.bank.manage.KIR;

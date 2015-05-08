@@ -2,7 +2,7 @@ package pl.put.miasi.bank.filters;
 
 import java.util.List;
 
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 
 public class AbstractAntiFraudingFilter implements Filter<List<Transfer>> {
 	private List<Filter<List<Transfer>>> filters;

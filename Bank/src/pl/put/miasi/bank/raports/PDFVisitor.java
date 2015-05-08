@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import pl.put.miasi.bank.accountdata.Operation;
+import pl.put.miasi.bank.accountdata.operations.Operation;
 import pl.put.miasi.bank.commondata.Registry;
 
 import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry.Entry;

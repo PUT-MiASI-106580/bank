@@ -5,9 +5,9 @@ import java.util.List;
 
 import pl.put.miasi.bank.accountdata.Accounts;
 import pl.put.miasi.bank.accountdata.IAccount;
-import pl.put.miasi.bank.accountdata.Transfer;
+import pl.put.miasi.bank.accountdata.operations.IAuthorization;
+import pl.put.miasi.bank.accountdata.operations.Transfer;
 import pl.put.miasi.bank.commondata.Owner;
-import pl.put.miasi.bank.facilities.IAuthorization;
 
 /**
  * 

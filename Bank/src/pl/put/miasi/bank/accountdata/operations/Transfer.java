@@ -1,5 +1,6 @@
-package pl.put.miasi.bank.accountdata;
+package pl.put.miasi.bank.accountdata.operations;
 
+import pl.put.miasi.bank.accountdata.IAccount;
 import pl.put.miasi.bank.manage.Bank;
 
 /**
