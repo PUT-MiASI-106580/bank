@@ -38,9 +38,9 @@ MIgn8) testy integracyjne
 
 16) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
 
-MSzych 19) Powrzucac w package wszystkie klasy
+MSzych 19) Powrzucac w package wszystkie klasy //done
 
-25) poprawa literówki report na raport
+MSzych 25) poprawa literówki report na raport
 
 26) CreateAccount powinien zwracac string i null zamiast true i false
 
