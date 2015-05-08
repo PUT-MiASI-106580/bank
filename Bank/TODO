@@ -22,7 +22,7 @@ MSzych 13) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku
 Na teraz TODO:
 
 MIgn8) testy integracyjne
-21) Dodanie Direct Injection
+21) Dodanie Dependency Injection
 22) Aktualizacja testów integracyjnych
 
 24) dodanie w BANKS prefixLength i getId analogicznie do klasy account
