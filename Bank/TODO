@@ -40,12 +40,25 @@ MIgn8) testy integracyjne
 
 MSzych 19) Powrzucac w package wszystkie klasy
 
+25) poprawa literówki report na raport
+
+26) CreateAccount powinien zwracac string i null zamiast true i false
+
+27) Tworzenie BankOffice, CachMachine i DepositCashMachine przez Bank i zwracane przez niego INTERFEJSY
+
+28) Zmiana cashAmmount na cashLimit w CashMachine i CashDepositMachine
+
+29) Zamiana wszedzie obiektow na interfejsy ( zwracane przez tworzenie itd )
+
 10) okomentowanie kodu/kod samokomentujacy sie
 23) Ogólnie refaktor
 
 
 
+
 WIEDZA OGLOLNA:
+
+Bank ma nieskonczona ilosc gotowki
 
 KIR jest singletonem
 
