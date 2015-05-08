@@ -4,16 +4,8 @@ Na kiedys DONE:
 
 Na kiedys TODO:
 
-9) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
-10) okomentowanie kodu/kod samokomentujacy sie
-11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
 12) dokumentacja jak dziala system
-13) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku (addTransfersPackage)
-14) dodanie implementacji kir.processTransfersPackage() ( przetworzenie paczki z danymi z transferow )
 15) omowienie co wtedy gdy przelew jest odrzucony przez KIR
-16) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
-19) Powrzucac w package wszystkie klasy
-20) Zmienic historie konta tak by miala tytul i mozliwosc wprowadzenia przelewu ( Account.history )
 
 Na teraz DONE:
 RWoj 1) dodac wzorzec obserwator pomiedzy KIR'em a bankiem - KIR robi poczatek sesji, kazdy bank odsyla paczke (chocby pusta) 
@@ -32,6 +24,15 @@ MIgn8) testy integracyjne
 21) Dodanie Direct Injection
 22) Aktualizacja testów integracyjnych
 
+9) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
+10) okomentowanie kodu/kod samokomentujacy sie
+11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
+13) dodanie implementacji tego ze KIR otrzymuje paczke przelewow od banku (addTransfersPackage)
+14) dodanie implementacji kir.processTransfersPackage() ( przetworzenie paczki z danymi z transferow )
+16) Account w historii nie wykorzystuje title przy operacji zapisu odczytu
+MSzych 19) Powrzucac w package wszystkie klasy
+20) Zmienic historie konta tak by miala tytul i mozliwosc wprowadzenia przelewu ( Account.history )
+23) Ogólnie refaktor
 
 WIEDZA OGLOLNA:
 
