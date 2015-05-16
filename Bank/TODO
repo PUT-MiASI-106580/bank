@@ -30,7 +30,7 @@ MIgn8) testy integracyjne
 MSzych 25) zrobienie z prefixLength private static final w banks i accounts //done
 
 9) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
-11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
+MSzych 11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
 
 20) Zmienic historie konta tak by miala tytul i mozliwosc wprowadzenia przelewu ( Account.history )
 

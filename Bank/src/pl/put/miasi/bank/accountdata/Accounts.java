@@ -13,11 +13,11 @@ import pl.put.miasi.bank.commondata.Owner;
  */
 public class Accounts implements IAuthorization {
 
-	private ArrayList<IAccount> accounts;
+	private ArrayList<IAccount> accounts = new ArrayList<>();
 
 	private String prefix;
 	
-	private static final int PREFIX_LENGTH = 8;
+	public static final int PREFIX_LENGTH = 8;
 
 	private int IDGenerator;
 

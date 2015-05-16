@@ -1,11 +1,12 @@
 package pl.put.miasi.bank.filters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import pl.put.miasi.bank.accountdata.operations.Transfer;
 
 public class AbstractAntiFraudingFilter implements Filter<List<Transfer>> {
-	private List<Filter<List<Transfer>>> filters;
+	private List<Filter<List<Transfer>>> filters = new ArrayList<Filter<List<Transfer>>>();
 	
 	private void addFilter(Filter<List<Transfer>> filter) {
 		if (!filters.contains(filter)) {

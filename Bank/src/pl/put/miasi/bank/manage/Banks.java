@@ -53,7 +53,7 @@ public class Banks {
 	
 	private ArrayList<Bank> banks;
 	
-	private static final int PREFIX_LENGTH = 8;
+	public static final int PREFIX_LENGTH = 8;
 
 	private int prefixGenerator;
 	
