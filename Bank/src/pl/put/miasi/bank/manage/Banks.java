@@ -53,7 +53,7 @@ public class Banks {
 	
 	private ArrayList<Bank> banks;
 	
-	private int prefixLength = 8;
+	private static final int PREFIX_LENGTH = 8;
 
 	private int prefixGenerator;
 	
@@ -64,7 +64,7 @@ public class Banks {
 		prefixGenerator++;
 		
 		String fill = prefix;
-		int diff = Integer.toString(prefixGenerator).length() - prefixLength;
+		int diff = Integer.toString(prefixGenerator).length() - PREFIX_LENGTH;
 		if(diff < 0)
 		{
 			while( diff < 0 )
@@ -93,7 +93,7 @@ public class Banks {
 			prefixGenerator++;
 			
 			fill = prefix;
-			diff = Integer.toString(prefixGenerator).length() - prefixLength;
+			diff = Integer.toString(prefixGenerator).length() - PREFIX_LENGTH;
 			if(diff < 0)
 			{
 				while( diff < 0 )
@@ -159,11 +159,7 @@ public class Banks {
 	}
 
 	public int getPrefixLength() {
-		return prefixLength;
-	}
-
-	public void setPrefixLength(int prefixLength) {
-		this.prefixLength = prefixLength;
+		return PREFIX_LENGTH;
 	}
 
 	public List<Bank> getBanks() {

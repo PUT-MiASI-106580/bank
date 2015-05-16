@@ -27,7 +27,7 @@ MIgn8) testy integracyjne
 
 24) dodanie w BANKS prefixLength i getId analogicznie do klasy account
 
-25) zrobienie z prefixLength private static final w banks i accounts
+MSzych 25) zrobienie z prefixLength private static final w banks i accounts //done
 
 9) zmienic wszystkie operacje parametry wejsciowe konto na string skladajacy sie z bank.prefix+konto.ID
 11) dodac klase dzielaca string na ID konta i id banku i ogolnie walidujaca string (jakis wrapper)
