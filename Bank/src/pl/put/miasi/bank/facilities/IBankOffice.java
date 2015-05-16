@@ -9,7 +9,7 @@ public interface IBankOffice extends IAuthorization {
 	public boolean RemoveAccount(IAccount account, Owner owner);
 
 	public String getId();
-	public boolean CreateAccount(Owner owner);
+	public String CreateAccount(Owner owner);
 	
 	void addBasicDebitTo(IAccount account, Owner owner);
 	

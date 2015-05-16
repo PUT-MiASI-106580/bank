@@ -43,7 +43,7 @@ public class Bank implements IAuthorization, IBank {
 		this.Id = Id;
 	}
 
-	public boolean CreateAccount(Owner owner) {
+	public String CreateAccount(Owner owner) {
 
 		if (accounts == null) {
 			accounts = new Accounts(this.Id);

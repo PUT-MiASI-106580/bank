@@ -40,7 +40,7 @@ public class BankOffice implements IAuthorization, IBankOffice {
 	}
 
 	@Override
-	public boolean CreateAccount(Owner owner) {
+	public String CreateAccount(Owner owner) {
 		return bank.CreateAccount(owner);
 	}
 
