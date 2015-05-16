@@ -21,7 +21,7 @@ public class Accounts implements IAuthorization {
 
 	private int IDGenerator;
 
-	private String getId() throws Exception {
+	private String getId() {
 		IDGenerator++;
 		
 		String fill = prefix;
@@ -70,19 +70,23 @@ public class Accounts implements IAuthorization {
 			
 			tmp = prefix + Integer.toString(IDGenerator);
 		}
-		throw new Exception("Unreachable code getId");
+		assert false : "Unreachable code getId";
+		return null;
 	}
 	
-	public boolean createAccount(Owner owner){
+	public String createAccount(Owner owner){
 		Account account = new Account(owner);
+		String accountId = null;
 		try {
-			account.setId(this.getId());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
+			accountId = this.getId();
+			account.setId(accountId);
+			accounts.add(account);
+		} catch (AssertionError e) {
+			accountId = null;
+			account = null; //mark object as possible to remove by gc
+			e.printStackTrace();			
 		}
-		return true;
+		return accountId;
 	}
 
 	public String getPrefix() throws Exception {
@@ -137,11 +141,30 @@ public class Accounts implements IAuthorization {
 		return PREFIX_LENGTH;
 	}
 
+	@Deprecated
 	public boolean accountExists(IAccount account ){
 		if( accounts != null ){
 			return accounts.contains(account);
 		}
 		return false;
+	}
+	
+	public boolean accountExists(String id) {
+		if (id == null) {
+			return false;
+		}
+		IAccount account = getAccountFromNumber(id);
+		return accounts.contains(account);
+	}
+
+	public IAccount getAccountFromNumber(String number) {
+		IAccount account = null;
+		for (IAccount a : accounts) {
+			if (number.equals(a.getId())) {
+				account = a;
+			}
+		}
+		return account;
 	}
 
 	@Override
