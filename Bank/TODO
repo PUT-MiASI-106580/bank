@@ -42,7 +42,7 @@ MSzych 19) Powrzucac w package wszystkie klasy //done
 
 MSzych 25) poprawa literówki report na raport //done
 
-26) CreateAccount powinien zwracac string i null zamiast true i false
+MSzych 26) CreateAccount powinien zwracac string i null zamiast true i false //done
 
 27) Tworzenie BankOffice, CachMachine i DepositCashMachine przez Bank i zwracane przez niego INTERFEJSY
 
