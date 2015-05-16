@@ -137,10 +137,6 @@ public class Accounts implements IAuthorization {
 		return PREFIX_LENGTH;
 	}
 
-	public void setPrefixLength(int prefixLength) {
-		this.PREFIX_LENGTH = prefixLength;
-	}
-	
 	public boolean accountExists(IAccount account ){
 		if( accounts != null ){
 			return accounts.contains(account);
