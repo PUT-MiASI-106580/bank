@@ -149,6 +149,10 @@ public class Bank implements IAuthorization, IBank {
 		kir.addTransfersPackage(transfersPackage);
 		transfersPackage.clear();
 	}
+	
+	public Accounts getAccounts(){
+		return accounts;		
+	}
 
 	public boolean makeTransfer(IAccount fromAccount, Owner owner, Bank to,
 			IAccount toAccount, double amount, String title) {
